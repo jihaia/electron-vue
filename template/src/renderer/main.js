@@ -10,6 +10,11 @@ import router from './router'
 {{#isEnabled plugins 'vuex'}}
 import store from './store'
 {{/isEnabled}}
+  
+import OfficeUIFabricVue from 'office-ui-fabric-vue'
+
+import 'office-ui-fabric-vue/dist/index.css'
+import 'office-ui-fabric-core/dist/css/fabric.min.css'
 
 {{#isEnabled plugins 'vue-electron'}}
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
@@ -18,6 +23,8 @@ if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 {{/isEnabled}}
 Vue.config.productionTip = false
+
+Vue.use(OfficeUIFabricVue)
 
 /* eslint-disable no-new */
 new Vue({
