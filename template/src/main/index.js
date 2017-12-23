@@ -3,7 +3,8 @@
 
 {{/if_eq}}
 import { app, BrowserWindow } from 'electron'{{#if_eq eslintConfig 'airbnb'}} // eslint-disable-line{{/if_eq}}
-
+import Storage from './Storage'
+                                      
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -17,12 +18,23 @@ const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
 
+// Initialize Storage
+const storage = new Storage({
+  // We'll call our data file 'user-preferences'
+  configName: 'settings',
+  defaults: {
+    windowBounds: { width: 400, height: 640 }
+  }
+})
+
 function createWindow () {
   /**
    * Initial window options
    */
+  var { height } = storage.get('windowBounds')
+  
   mainWindow = new BrowserWindow({
-    height: 640,
+    height: height,
     useContentSize: true,
     width: 380,
     maxWidth: 380,
