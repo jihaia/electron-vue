@@ -1,10 +1,10 @@
 <template>
 <div id="app" style="position: relative;">
-  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-purple noselect" style="margin: 0; padding: 80px 20px 20px 20px; -webkit-app-region: drag; position: fixed; top: 0; width: 100%; z-index: 10000">
-    {{ name }}
-    <div style="font-size: 16px; margin-top: -5px;">Lorem ipsum dolar sit</div>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-purple noselect banner">
+    element-mp
+    <div class="subtitle">D&B Direct Plus - Multi Process</div>
   </h1>
-  <div style="padding-top: 170px;">
+  <div class="main-content">
     <router-view></router-view>
   </div>
 </div>
@@ -28,6 +28,16 @@
 </script>
 
 <style>
+.banner {
+  margin: 0;
+  padding: 80px 20px 20px 20px;
+  -webkit-app-region: drag;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000
+}
+
   .noselect {
   cursor: pointer;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -45,6 +55,10 @@ body {
   background: #fafafa;
 }
 
+.main-content {
+  padding-top: 170px;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -55,5 +69,10 @@ body {
     right: 0;
     left: 0;
     z-index: 10;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-top: -5px;
 }
 </style>
