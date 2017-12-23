@@ -1,8 +1,8 @@
 <template>
 <div id="app" style="position: relative;">
   <h1 class="ms-font-su ms-fontColor-white ms-bgColor-purple noselect banner">
-    element-mp
-    <div class="subtitle">D&B Direct Plus - Multi Process</div>
+    {{ name }}
+    <div class="subtitle">Lorem ipsum dolar sit</div>
   </h1>
   <div class="main-content">
     <router-view></router-view>
