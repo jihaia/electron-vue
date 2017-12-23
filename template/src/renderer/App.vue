@@ -5,7 +5,6 @@
     <div style="font-size: 16px; margin-top: -5px;">Lorem ipsum dolar sit</div>
   </h1>
   <div style="padding-top: 170px;">
-    <navigator></navigator>
     <router-view></router-view>
   </div>
 </div>
